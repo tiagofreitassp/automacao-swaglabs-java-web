@@ -16,11 +16,11 @@ Este documento descreve o plano de testes de automação para o Swag Labs, um ap
 ### Objetivos
 Os objetivos dos testes de automação para os Swag Labs são os seguintes:
 
-Para garantir que o aplicativo Swag Labs seja estável e confiável.
-Para aumentar a velocidade dos testes e reduzir o esforço manual.
-Para reduzir o custo geral dos testes.
-Para garantir que todos os itens adicionados ao carrinho serão finalizados.
-Para garantir que os preços estão corretos.
+- Para garantir que o aplicativo Swag Labs seja estável e confiável.
+- Para aumentar a velocidade dos testes e reduzir o esforço manual.
+- Para reduzir o custo geral dos testes.
+- Para garantir que todos os itens adicionados ao carrinho serão finalizados.
+- Para garantir que os preços estão corretos.
 
 ### Escopo
 O escopo dos testes de automação inclui:
