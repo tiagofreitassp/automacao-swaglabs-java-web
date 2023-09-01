@@ -22,10 +22,8 @@ public class comprasSteps extends DriverWeb {
 
     public String chrome = "chrome";
     public String firefox = "firefox";
-    public String ie = "ie";
     public String edge = "edge";
-    public String safari = "safari";
-    public String link = "http://automationpractice.com/index.php?";
+    public String link = "https://www.saucedemo.com/";
 
     public String email;
     public String titulo;
