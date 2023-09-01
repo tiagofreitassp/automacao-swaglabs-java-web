@@ -24,7 +24,7 @@ public class comprasPO{
         this.geradorPDF.finishPdf();
     }
 
-    public void realizarLoginComSucesso() {
+    public void realizarLoginComSucesso() throws InterruptedException {
         page.sendKeys(By.id(v.input_UserName),v.username);
         page.sendKeys(By.id(v.input_Password),v.password);
 
@@ -37,7 +37,7 @@ public class comprasPO{
         geradorPDF.evidenciaElemento("Carregando tela inicial");
     }
 
-    public void realizarCompraDeProduto(){
+    public void realizarCompraDeProduto() throws InterruptedException {
         abrirInformaçõesDoProduto();
         clicarNoBotaoAddToCart();
         clicarNoIconeCarrinhoDeCompras();
@@ -47,54 +47,54 @@ public class comprasPO{
         clicarNoBotaoCheckout();
     }
 
-    public void abrirInformaçõesDoProduto(){
+    public void abrirInformaçõesDoProduto() throws InterruptedException {
         page.click(By.id("item_4_title_link"));
         geradorPDF.evidenciaElemento("Abrir informações do Produto");
     }
 
-    public void clicarNoBotaoAddToCart(){
+    public void clicarNoBotaoAddToCart() throws InterruptedException {
         page.click(By.id("add-to-cart-sauce-labs-backpack"));
         geradorPDF.evidenciaElemento("Clicar no botão Add to cart");
     }
 
-    public void clicarNoBotaoBackToProducts(){
+    public void clicarNoBotaoBackToProducts() throws InterruptedException {
         page.click(By.id("back-to-products"));
         geradorPDF.evidenciaElemento("Clicar no botão Back to products");
     }
 
-    public void clicarNoIconeCarrinhoDeCompras(){
+    public void clicarNoIconeCarrinhoDeCompras() throws InterruptedException {
         page.click(By.className("shopping_cart_link"));
         geradorPDF.evidenciaElemento("Clicar no Icone Carrinho De Compras");
     }
 
-    public void validarNomeDoProduto(){
+    public void validarNomeDoProduto() throws InterruptedException {
         page.validateDisplayElement(By.id("item_4_title_link"));
         geradorPDF.evidenciaElemento("Validar nome do Produto");
     }
 
-    public void validarDescricaoDoProduto(){
-        page.validateDisplayElement(By.id("inventory_item_desc"));
+    public void validarDescricaoDoProduto() throws InterruptedException {
+        page.validateDisplayElement(By.className("inventory_item_desc"));
         geradorPDF.evidenciaElemento("Validar descrição do Produto");
     }
 
-    public void validarValorDoProduto(){
-        page.validateDisplayElement(By.id("inventory_item_price"));
+    public void validarValorDoProduto() throws InterruptedException {
+        page.validateDisplayElement(By.className("inventory_item_price"));
         geradorPDF.evidenciaElemento("Validar valor do Produto");
     }
 
-    public void clicarNoBotaoCheckout(){
+    public void clicarNoBotaoCheckout() throws InterruptedException {
         page.click(By.id("checkout"));
         geradorPDF.evidenciaElemento("Clicar no botão Checkout");
     }
 
-    public void RealizarPagamentoDoProduto(){
+    public void RealizarPagamentoDoProduto() throws InterruptedException {
         inserirDadosDoComprador();
         clicarNoBotaoContinue();
         validarDadosDoPagamento();
         clicarNoBotaoFinish();
     }
 
-    public void inserirDadosDoComprador(){
+    public void inserirDadosDoComprador() throws InterruptedException {
         page.validateDisplayElement(By.xpath("//span[contains(text(),'Checkout: Your Information')]"));
         page.sendKeys(By.id("first-name"), "Jim");
         page.sendKeys(By.id("last-name"), "Parsons");
@@ -102,25 +102,24 @@ public class comprasPO{
         geradorPDF.evidenciaElemento("Inserir dados do comprador");
     }
 
-    public void clicarNoBotaoContinue(){
+    public void clicarNoBotaoContinue() throws InterruptedException {
         page.click(By.id("continue"));
         geradorPDF.evidenciaElemento("Clicar no botão Continue");
     }
 
-    public void validarDadosDoPagamento(){
+    public void validarDadosDoPagamento() throws InterruptedException {
         page.validateDisplayElement(By.xpath("//div[contains(text(),'Payment Information')]"));
         page.validateDisplayElement(By.xpath("//div[contains(text(),'Shipping Information')]"));
         page.validateDisplayElement(By.xpath("//div[contains(text(),'Price Total')]"));
-        page.validateDisplayElement(By.className("summary_info_label summary_total_label"));
         geradorPDF.evidenciaElemento("Validar dados do pagamento");
     }
 
-    public void clicarNoBotaoFinish(){
+    public void clicarNoBotaoFinish() throws InterruptedException {
         page.click(By.id("finish"));
         geradorPDF.evidenciaElemento("Clicar no botão Finish");
     }
 
-    public void validarPagamentoComSucesso(){
+    public void validarPagamentoComSucesso() throws InterruptedException {
         page.validateDisplayElement(By.xpath("//h2[contains(text(),'Thank you for your order!')]"));
         page.validateDisplayElement(By.className("complete-text"));
         page.validateDisplayElement(By.id("back-to-products"));

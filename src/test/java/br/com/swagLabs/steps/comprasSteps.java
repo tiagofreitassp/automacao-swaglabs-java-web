@@ -32,18 +32,18 @@ public class comprasSteps extends DriverWeb {
     }
 
     @Dado("que efetuei a autenticacao de usuario com sucesso")
-    public void queEfetueiAAutenticacaoDeUsuarioComSucesso() {
+    public void queEfetueiAAutenticacaoDeUsuarioComSucesso() throws InterruptedException {
         comprasPO.realizarLoginComSucesso();
     }
 
     @Dado("realizei a compra de um produto")
-    public void realizeiACompraDeUmProduto() {
+    public void realizeiACompraDeUmProduto() throws InterruptedException {
         comprasPO.realizarCompraDeProduto();
         comprasPO.RealizarPagamentoDoProduto();
     }
 
     @Entao("devo finalizar o pagamento")
-    public void devoFinalizarOPagamento() {
+    public void devoFinalizarOPagamento() throws InterruptedException {
         comprasPO.validarPagamentoComSucesso();
     }
 }

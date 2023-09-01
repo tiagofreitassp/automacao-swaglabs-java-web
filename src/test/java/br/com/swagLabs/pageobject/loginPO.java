@@ -24,7 +24,7 @@ public class loginPO {
         this.geradorPDF.finishPdf();
     }
 
-    public void realizarLogin(String username, String password) {
+    public void realizarLogin(String username, String password) throws InterruptedException {
         page.sendKeys(By.id(v.input_UserName),username);
         page.sendKeys(By.id(v.input_Password),password);
 
@@ -37,7 +37,7 @@ public class loginPO {
         geradorPDF.evidenciaElemento("Carregando tela inicial");
     }
 
-    public void validarTelaInicial() {
+    public void validarTelaInicial() throws InterruptedException {
         page.validateDisplayElement(By.xpath(v.title_Products));
         page.validateDisplayElement(By.id(v.icon_ShoppingCart));
         page.validateDisplayElement(By.xpath(v.span_Name));

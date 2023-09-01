@@ -46,19 +46,19 @@ public class BasePage {
         svg.get(posicao).click();
     }
 
-    public void clickWithoutWait(By by) {
+    public void clickWithoutWait(By by) throws InterruptedException {
         waitElement(by);
         selectElement(by);
         this.driver.findElement(by).click();
     }
 
-    public void sendKeys(By by, String texto) {
+    public void sendKeys(By by, String texto) throws InterruptedException {
         waitElement(by);
         selectElement(by);
         this.driver.findElement(by).sendKeys(texto);
     }
 
-    public void click(By by) {
+    public void click(By by) throws InterruptedException {
         waitElement(by);
         selectElement(by);
         this.driver.findElement(by).click();
@@ -68,7 +68,7 @@ public class BasePage {
         Thread.sleep(tempo);
     }
 
-    public void validateDisplayElement(By by){
+    public void validateDisplayElement(By by) throws InterruptedException {
         waitElement(by);
         selectElement(by);
     }
@@ -78,7 +78,7 @@ public class BasePage {
         ((JavascriptExecutor) this.driver).executeScript("arguments[0].scrollIntoView(true);", elemento);
     }
 
-    public void validateText(By by, String texto) throws MalformedURLException {
+    public void validateText(By by, String texto) throws InterruptedException {
         waitElement(by);
         selectElement(by);
         Assert.assertEquals(texto, getText(by));
@@ -88,23 +88,23 @@ public class BasePage {
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState=='complete'"));
     }
 
-    public WebDriver waitFrameAndSwitch(By frame) {
+    public WebDriver waitFrameAndSwitch(By frame) throws InterruptedException {
         waitElement(frame);
         return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
 
-    public void switchToFrame(By by){
+    public void switchToFrame(By by) throws InterruptedException {
         waitElement(by);
         WebElement el = this.driver.findElement(by);
         this.driver.switchTo().frame(el);
     }
 
-    public String getText(By by) throws MalformedURLException {
+    public String getText(By by) throws InterruptedException {
         waitElement(by);
         return this.driver.findElement(by).getText();
     }
 
-    public void waitElement(By by) {
+    public void waitElement(By by) throws InterruptedException {
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }

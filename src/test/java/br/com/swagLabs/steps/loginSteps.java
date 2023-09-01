@@ -36,12 +36,12 @@ public class loginSteps extends DriverWeb {
     }
 
     @Dado("que efetuei a autenticacao de usuario com {string} e {string}")
-    public void queEfetueiAAutenticacaoDeUsuarioComE(String username, String password) {
+    public void queEfetueiAAutenticacaoDeUsuarioComE(String username, String password) throws InterruptedException {
         loginPO.realizarLogin(username,password);
     }
 
     @Entao("devo visualizar a tela inicial do Swag Labs")
-    public void devoVisualizarATelaInicialDoSwagLabs() {
+    public void devoVisualizarATelaInicialDoSwagLabs() throws InterruptedException {
         loginPO.validarTelaInicial();
     }
 }

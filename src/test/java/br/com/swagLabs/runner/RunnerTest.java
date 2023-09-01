@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/java/br/com/swagLabs/features",
 
         glue = "br.com.swagLabs.steps",
-        tags = "@SwagLabs_Compras",
+        tags = "@Regressivo",
 
         plugin = {"pretty", "html:evidencias/relatorio_html/evidence.html"},
         monochrome = true,
