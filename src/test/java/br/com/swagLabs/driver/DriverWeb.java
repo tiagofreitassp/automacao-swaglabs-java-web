@@ -24,14 +24,11 @@ public class DriverWeb {
         }else if (browser.equalsIgnoreCase("edge")){
             criarDriverEdge(url);
         }else{
-            criarDriverChrome(url);
+            criarDriverEdge(url);
         }
     }
 
     public void criarDriverChrome(String url){
-        String os = InfraUtils.getOsName();
-        System.out.println("Sistema Operacional: "+os);
-
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -39,9 +36,6 @@ public class DriverWeb {
     }
 
     public void criarDriverFirefox(String url){
-        String os = InfraUtils.getOsName();
-        System.out.println("Sistema Operacional: "+os);
-
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
@@ -49,9 +43,6 @@ public class DriverWeb {
     }
 
     public void criarDriverEdge(String url) throws Exception {
-        String os = InfraUtils.getOsName();
-        System.out.println("Sistema Operacional: "+os);
-
         WebDriverManager.edgedriver().setup();
 
         //O Driver abaixo é do MS Edge Chromium e nao da versao anterior dele
