@@ -10,12 +10,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverWeb {
     public WebDriver driver;
+    public String url = "https://www.saucedemo.com/";
 
     public WebDriver getCurrentRunningDriver() {
         return driver;
     }
 
-    public void criarDriverWeb(String browser, String url) throws Exception {
+    public void criarDriverWeb(String browser) throws Exception {
         if(browser.equalsIgnoreCase("chrome")){
             criarDriverChrome(url);
         }else if (browser.equalsIgnoreCase("firefox")){

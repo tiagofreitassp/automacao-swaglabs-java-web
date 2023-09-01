@@ -2,8 +2,6 @@ package br.com.swagLabs.steps;
 
 import br.com.swagLabs.driver.DriverWeb;
 import br.com.swagLabs.pageobject.comprasPO;
-import br.com.swagLabs.pageobject.loginPO;
-import br.com.swagLabs.utils.GeradorPDF;
 import br.com.swagLabs.variables.LoginVar;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -11,37 +9,41 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 
-public class loginSteps extends DriverWeb {
+public class comprasSteps extends DriverWeb {
     public LoginVar v = new LoginVar();
-    public loginPO loginPO;
     public comprasPO comprasPO;
-    public GeradorPDF geradorPDF;
 
     private Scenario cenario;
     private String nomeDoCenario;
 
-    @Before("@SwagLabs_Login")
+    @Before("@SwagLabs_Compras")
     public void setUp(Scenario cenario) throws Exception {
         this.cenario = cenario;
         nomeDoCenario = this.cenario.getName();
         criarDriverWeb(v.edge);
 
-        loginPO = new loginPO(getCurrentRunningDriver(),this.cenario,this.nomeDoCenario);
+        comprasPO = new comprasPO(getCurrentRunningDriver(),this.cenario,this.nomeDoCenario);
     }
 
-    @After("@SwagLabs_Login")
+    @After("@SwagLabs_Compras")
     public void tearDown() throws Exception {
-        loginPO.fecharPDF();
+        comprasPO.fecharPDF();
         fecharDriverWeb();
     }
 
-    @Dado("que efetuei a autenticacao de usuario com {string} e {string}")
-    public void queEfetueiAAutenticacaoDeUsuarioComE(String username, String password) {
-        loginPO.realizarLogin(username,password);
+    @Dado("que efetuei a autenticacao de usuario com sucesso")
+    public void queEfetueiAAutenticacaoDeUsuarioComSucesso() {
+        comprasPO.realizarLoginComSucesso();
     }
 
-    @Entao("devo visualizar a tela inicial do Swag Labs")
-    public void devoVisualizarATelaInicialDoSwagLabs() {
-        loginPO.validarTelaInicial();
+    @Dado("realizei a compra de um produto")
+    public void realizeiACompraDeUmProduto() {
+        comprasPO.realizarCompraDeProduto();
+        comprasPO.RealizarPagamentoDoProduto();
+    }
+
+    @Entao("devo finalizar o pagamento")
+    public void devoFinalizarOPagamento() {
+        comprasPO.validarPagamentoComSucesso();
     }
 }

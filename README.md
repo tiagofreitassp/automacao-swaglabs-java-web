@@ -6,7 +6,7 @@ Dentro da pasta evidencias
 
 ## Relatório de execução
 
-Dentro da pasta evidencias/html
+Dentro da pasta evidencias/relatorio_html
 
 ## Plano de teste de automação
 
@@ -64,7 +64,7 @@ O processo de teste de automação seguirá as etapas abaixo:
 Os seguintes riscos são identificados:
 
 - Ambiente: se os testes forem executados em ambiente de produção, pode gerar compras involuntárias, faturamentos indevidos, descasamento de estoque. 
-- Para mitigar esse risco, a URL base será definida na classe DriverWeb e a variavel da url esta na classe Variables.
+- Para mitigar esse risco, a URL base será definida na classe DriverWeb.
 - Exposição de dados do usuário: para mitigar esse risco, os dados do usuário serão criados apenas para a automação dos testes.
 - Mudanças nos elementos da web: isso pode levar a erros de elemento não encontrado. 
 - Para mitigar este risco os localizadores web serão organizados num ficheiro diferente de forma dinâmica.

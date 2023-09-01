@@ -71,7 +71,6 @@ public class BasePage {
     public void validateDisplayElement(By by){
         waitElement(by);
         selectElement(by);
-        this.driver.findElement(by).isDisplayed();
     }
 
     public void moveTolement(By by){

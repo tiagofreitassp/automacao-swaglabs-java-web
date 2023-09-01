@@ -7,12 +7,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         //Para executar todas as features
-        features = "src/test/java/br/com/swagLabs/features/swaglabs.feature",
+        features = "src/test/java/br/com/swagLabs/features",
 
         glue = "br.com.swagLabs.steps",
-        tags = "@ct01",
+        tags = "@SwagLabs_Compras",
 
-        plugin = {"pretty", "html:evidencias/html/evidence-html"},
+        plugin = {"pretty", "html:evidencias/relatorio_html/evidence.html"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false

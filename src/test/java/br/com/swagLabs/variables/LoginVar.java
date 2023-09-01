@@ -1,10 +1,11 @@
 package br.com.swagLabs.variables;
 
-public class Variables {
+public class LoginVar {
     public String chrome = "chrome";
     public String firefox = "firefox";
     public String edge = "edge";
-    public String link = "https://www.saucedemo.com/";
+    public String username = "standard_user";
+    public String password = "secret_sauce";
 
     public String input_UserName = "user-name";//id
     public String input_Password = "password";//id

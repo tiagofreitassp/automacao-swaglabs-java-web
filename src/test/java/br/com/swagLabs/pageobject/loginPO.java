@@ -2,7 +2,7 @@ package br.com.swagLabs.pageobject;
 
 import br.com.swagLabs.base.BasePage;
 import br.com.swagLabs.utils.GeradorPDF;
-import br.com.swagLabs.variables.Variables;
+import br.com.swagLabs.variables.LoginVar;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ public class loginPO {
     public BasePage page;
     private WebDriver driver;
 
-    public Variables v = new Variables();
+    public LoginVar v = new LoginVar();
 
     public loginPO(WebDriver driver, Scenario cenario, String nomeTeste) {
         this.driver=driver;

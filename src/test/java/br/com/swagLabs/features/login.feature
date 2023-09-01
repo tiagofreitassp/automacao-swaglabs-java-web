@@ -1,9 +1,10 @@
 #language: pt
 
-@SwagLabs
-Funcionalidade: Realizar compras
+@Regressivo
+@SwagLabs_Login
+Funcionalidade: Realizar autenticação
 
-  @ct01
+  @ct1_01
   Esquema do Cenario: Realizar autenticação com sucesso
     Dado que efetuei a autenticacao de usuario com "<username>" e "<password>"
     Entao devo visualizar a tela inicial do Swag Labs
