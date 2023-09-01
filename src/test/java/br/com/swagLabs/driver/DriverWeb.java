@@ -61,9 +61,7 @@ public class DriverWeb {
     }
 
     public void fecharDriverWeb(){
-        if (driver != null){
-            driver.quit();
-            System.out.println("Driver encerrado com sucesso!");
-        }
+        driver.quit();
+        System.out.println("Driver encerrado com sucesso!");
     }
 }

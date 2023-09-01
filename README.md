@@ -1,12 +1,12 @@
 # Automação de testes do Swag Labs
 
-## Registro de tela de testes em execução
+## Registro das evidencias em formato PDF
 
-![](samples/record_test_automation_swag_labs.gif)
+Dentro da pasta evidencias
 
-## Amostra de relatório HtmlTestRunner
+## Relatório de execução
 
-![](samples/HtmlTestRunner_report_sample.png)
+Dentro da pasta evidencias/html
 
 ## Plano de teste de automação
 
