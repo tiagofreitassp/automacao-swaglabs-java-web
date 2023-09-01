@@ -1,4 +1,4 @@
-package br.com.ti.utils;
+package br.com.swagLabs.utils;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;

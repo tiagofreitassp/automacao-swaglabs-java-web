@@ -1,4 +1,4 @@
-package br.com.ti.variables;
+package br.com.swagLabs.variables;
 
 public class Variables {
     public String var = "";

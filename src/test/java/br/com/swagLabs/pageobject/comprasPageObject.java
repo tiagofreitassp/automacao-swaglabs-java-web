@@ -1,8 +1,8 @@
-package br.com.ti.pageobject;
+package br.com.swagLabs.pageobject;
 
-import br.com.ti.base.BasePage;
-import br.com.ti.utils.GeradorPDF;
-import br.com.ti.variables.Variables;
+import br.com.swagLabs.base.BasePage;
+import br.com.swagLabs.utils.GeradorPDF;
+import br.com.swagLabs.variables.Variables;
 import io.cucumber.java.Scenario;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;

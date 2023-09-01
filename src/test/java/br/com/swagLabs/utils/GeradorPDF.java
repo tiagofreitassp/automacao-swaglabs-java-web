@@ -1,6 +1,5 @@
-package br.com.ti.utils;
+package br.com.swagLabs.utils;
 
-import br.com.ti.base.BasePage;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import io.cucumber.java.Scenario;

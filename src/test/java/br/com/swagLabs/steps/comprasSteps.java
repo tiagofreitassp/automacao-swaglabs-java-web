@@ -1,9 +1,9 @@
-package br.com.ti.steps;
+package br.com.swagLabs.steps;
 
-import br.com.ti.driver.DriverWeb;
-import br.com.ti.pageobject.comprasPageObject;
-import br.com.ti.utils.GeradorPDF;
-import br.com.ti.variables.Variables;
+import br.com.swagLabs.driver.DriverWeb;
+import br.com.swagLabs.pageobject.comprasPageObject;
+import br.com.swagLabs.utils.GeradorPDF;
+import br.com.swagLabs.variables.Variables;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

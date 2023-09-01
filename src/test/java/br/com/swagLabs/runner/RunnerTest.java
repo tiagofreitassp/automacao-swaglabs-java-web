@@ -1,4 +1,4 @@
-package br.com.ti.runner;
+package br.com.swagLabs.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

@@ -1,4 +1,4 @@
-package br.com.ti.utils;
+package br.com.swagLabs.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class InfraUtils {
      *
      * @author Tiago Freitas
      * @return
-     * @since 23/08/2020
+     * @since 01/09/2023
      */
     public static String getIpClient() {
         try {
@@ -32,7 +32,7 @@ public class InfraUtils {
      *
      * @author Tiago Freitas
      * @return
-     * @since 23/08/2020
+     * @since 01/09/2023
      */
     public static String getPcName() {
         try {
@@ -49,7 +49,7 @@ public class InfraUtils {
      *
      * @author Tiago Freitas
      * @return
-     * @since 23/08/2020
+     * @since 01/09/2023
      */
     public static String getWindowsUser() {
         return System.getProperty("user.name");
