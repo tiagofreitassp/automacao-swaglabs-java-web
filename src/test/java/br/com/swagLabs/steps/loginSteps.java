@@ -44,4 +44,21 @@ public class loginSteps extends DriverWeb {
     public void devoVisualizarATelaInicialDoSwagLabs() throws InterruptedException {
         loginPO.validarTelaInicial();
     }
+
+    @Dado("que efetuei a autenticacao com {string} e senha {string}")
+    public void queEfetueiAAutenticacaoComESenha(String username, String password) throws InterruptedException {
+        loginPO.inserirUsernamePassword(username,password);
+        loginPO.clicarNoBotaoLogin();
+    }
+
+    @Entao("devo visualizar uma mensagem de erro")
+    public void devoVisualizarUmaMensagemDeErro() throws InterruptedException {
+        loginPO.clicarNoBotaoLogin();
+    }
+
+    @Dado("que efetuei a autenticacao com {string} incorreto e {string}")
+    public void queEfetueiAAutenticacaoComIncorretoE(String username, String password) throws InterruptedException {
+        loginPO.inserirUsernamePassword(username,password);
+        loginPO.clicarNoBotaoLogin();
+    }
 }

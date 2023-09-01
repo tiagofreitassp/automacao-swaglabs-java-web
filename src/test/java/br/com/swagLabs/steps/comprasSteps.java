@@ -46,4 +46,39 @@ public class comprasSteps extends DriverWeb {
     public void devoFinalizarOPagamento() throws InterruptedException {
         comprasPO.validarPagamentoComSucesso();
     }
+
+    @Dado("realizei o pedido de um produto")
+    public void realizeiOPedidoDeUmProduto() throws InterruptedException {
+        comprasPO.realizeiOPedidoDeUmProduto();
+    }
+
+    @Dado("removi um produto do carrinho de compras")
+    public void removiUmProdutoDoCarrinhoDeCompras() throws InterruptedException {
+        comprasPO.removiUmProdutoDoCarrinhoDeCompras();
+    }
+
+    @Entao("nao devo visualizar o produto no carrinho de compras")
+    public void naoDevoVisualizarOProdutoNoCarrinhoDeCompras() throws Exception {
+        comprasPO.naoDevoVisualizarOProdutoNoCarrinhoDeCompras();
+    }
+
+    @Dado("cliquei num produto para ver as informações detalhadas")
+    public void cliqueiNumProdutoParaVerAsInformaçõesDetalhadas() throws InterruptedException {
+        comprasPO.abrirInformaçõesDoProduto();
+    }
+
+    @Entao("devo visualizar informações com imagem, nome e descrição do produto")
+    public void devoVisualizarInformaçõesComImagemNomeEDescriçãoDoProduto() throws InterruptedException {
+        comprasPO.validarInformacoesDoProduto();
+    }
+
+    @Dado("cliquei no menu hamburguer")
+    public void cliqueiNoMenuHamburguer() throws InterruptedException {
+        comprasPO.clicarNoBotaoMenu();
+    }
+
+    @Entao("devo visualizar os items")
+    public void devoVisualizarOsItems() throws InterruptedException {
+        comprasPO.validarItemsDoMenuHamburguer();
+    }
 }

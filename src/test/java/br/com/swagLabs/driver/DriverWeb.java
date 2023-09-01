@@ -54,7 +54,7 @@ public class DriverWeb {
 
         WebDriverManager.edgedriver().setup();
 
-        //O Driver abaixo e do MS Edge Chromium e nao da versao anterior dele
+        //O Driver abaixo é do MS Edge Chromium e nao da versao anterior dele
         EdgeOptions edgeOptions = new EdgeOptions();
         driver = new EdgeDriver(edgeOptions);
         driver.manage().window().maximize();

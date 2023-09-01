@@ -73,6 +73,15 @@ public class BasePage {
         selectElement(by);
     }
 
+    public boolean IsDisplayedReturn(By by) throws Exception {
+        sleep(1500);
+        try {
+            return driver.findElement(by).isDisplayed();
+        } catch (NullPointerException | NoSuchElementException | StaleElementReferenceException ex) {
+            return false;
+        }
+    }
+
     public void moveTolement(By by){
         WebElement elemento = this.driver.findElement(by);
         ((JavascriptExecutor) this.driver).executeScript("arguments[0].scrollIntoView(true);", elemento);
@@ -117,7 +126,6 @@ public class BasePage {
         waitElement(by);
         driver.findElement(by).sendKeys(Keys.CONTROL+"a");
         driver.findElement(by).sendKeys(Keys.DELETE);
-        sleep(1000);
     }
 
     public Object executarJS(String cmd, Object... param) {

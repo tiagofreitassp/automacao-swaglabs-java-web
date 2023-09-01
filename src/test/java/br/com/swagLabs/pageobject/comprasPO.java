@@ -47,6 +47,23 @@ public class comprasPO{
         clicarNoBotaoCheckout();
     }
 
+    public void realizeiOPedidoDeUmProduto() throws InterruptedException {
+        abrirInformaçõesDoProduto();
+        clicarNoBotaoAddToCart();
+        clicarNoIconeCarrinhoDeCompras();
+        validarNomeDoProduto();
+        validarDescricaoDoProduto();
+        validarValorDoProduto();
+    }
+
+    public void validarInformacoesDoProduto() throws InterruptedException {
+        page.validateDisplayElement(By.xpath("//*[@id=\"inventory_item_container\"]/div/div/div[2]/div[1]"));
+        page.validateDisplayElement(By.xpath("//div[@class='inventory_details_desc large_size']"));
+        page.validateDisplayElement(By.xpath("//div[@class='inventory_details_price']"));
+        page.validateDisplayElement(By.xpath("//div[@class='inventory_details_img_container']"));
+        geradorPDF.evidenciaElemento("Validar informações do Produto");
+    }
+
     public void abrirInformaçõesDoProduto() throws InterruptedException {
         page.click(By.id("item_4_title_link"));
         geradorPDF.evidenciaElemento("Abrir informações do Produto");
@@ -125,5 +142,33 @@ public class comprasPO{
         page.validateDisplayElement(By.id("back-to-products"));
         geradorPDF.evidenciaElemento("Validar pagamento com sucesso");
         page.click(By.id("back-to-products"));
+    }
+
+    public void removiUmProdutoDoCarrinhoDeCompras() throws InterruptedException {
+        clicarNoBotaoRemove();
+    }
+    public void clicarNoBotaoRemove() throws InterruptedException {
+        page.click(By.id("remove-sauce-labs-backpack"));
+        geradorPDF.evidenciaElemento("Clicar no botão Remove");
+    }
+
+    public void naoDevoVisualizarOProdutoNoCarrinhoDeCompras() throws Exception {
+        if(page.IsDisplayedReturn(By.id("item_4_title_link"))){
+            throw new Exception("Elemento não deveria estar visivel!");
+        }
+        geradorPDF.evidenciaElemento("Validando se produto foi removido do carrinho de compras");
+    }
+
+    public void clicarNoBotaoMenu() throws InterruptedException {
+        page.click(By.id("react-burger-menu-btn"));
+        geradorPDF.evidenciaElemento("Clicar no botão Menu Hamburguer");
+    }
+
+    public void validarItemsDoMenuHamburguer() throws InterruptedException {
+        page.validateDisplayElement(By.id("inventory_sidebar_link"));
+        page.validateDisplayElement(By.id("about_sidebar_link"));
+        page.validateDisplayElement(By.id("logout_sidebar_link"));
+        page.validateDisplayElement(By.id("reset_sidebar_link"));
+        geradorPDF.evidenciaElemento("Validar opções do Menu Hamburguer");
     }
 }

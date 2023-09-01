@@ -25,16 +25,21 @@ public class loginPO {
     }
 
     public void realizarLogin(String username, String password) throws InterruptedException {
+        inserirUsernamePassword(username, password);
+        clicarNoBotaoLogin();
+        page.validateDisplayElement(By.xpath(v.title_Products));
+        geradorPDF.evidenciaElemento("Carregando tela inicial");
+    }
+
+    public void inserirUsernamePassword(String username, String password) throws InterruptedException {
         page.sendKeys(By.id(v.input_UserName),username);
         page.sendKeys(By.id(v.input_Password),password);
-
         geradorPDF.evidenciaElemento("Inserir Username e Password");
+    }
 
+    public void clicarNoBotaoLogin() throws InterruptedException {
         page.click(By.id(v.button_Login));
-
-        page.validateDisplayElement(By.xpath(v.title_Products));
-
-        geradorPDF.evidenciaElemento("Carregando tela inicial");
+        geradorPDF.evidenciaElemento("Clicar no botão Login");
     }
 
     public void validarTelaInicial() throws InterruptedException {
@@ -43,5 +48,10 @@ public class loginPO {
         page.validateDisplayElement(By.xpath(v.span_Name));
 
         geradorPDF.evidenciaElemento("Validar tela inicial");
+    }
+
+    public void validarMensagemDeErroNoLogin() throws InterruptedException {
+        page.validateDisplayElement(By.className("error-message-container error"));
+        geradorPDF.evidenciaElemento("Validar mensagem de erro no login");
     }
 }
