@@ -34,41 +34,42 @@ A ferramenta de automação selecionada para este projeto é o Selenium com ling
 ### Ambiente de teste
 O ambiente de teste para testes de automação é o seguinte:
 
-Sistema operacional: Mac OS X 13.5.1
-Navegador: Google Chrome
-Linguagem de programação: Java
-Ambiente de Desenvolvimento Integrado: Intellij Idea
+- Sistema operacional: Mac OS X 13.5.1
+- Navegador: Google Chrome
+- Linguagem de programação: Java
+- Ambiente de Desenvolvimento Integrado: Intellij Idea
 
 ### Casos de teste
 Os seguintes casos de teste serão automatizados:
 
-Faça login no aplicativo
-Classificar produtos
-Adicionar e remover produtos do carrinho
-Ver detalhes do produto
-Editar quantidade do produto
-Confira
+- Faça login no aplicativo
+- Ver detalhes do produto
+- Comprar produtos
 
 ### Dados de teste
-Os seguintes dados de teste serão usados ​​para testes de automação:
+Os seguintes dados de teste serão usados para testes de automação:
 
-Nomes de usuário e senhas
+- Nomes de usuário e senhas
 
 ### Execução de teste
 O processo de teste de automação seguirá as etapas abaixo:
 
-Identifique os casos de teste a serem automatizados.
-Desenvolva scripts de automação para casos de teste identificados.
-Execute os scripts de automação.
-Analise os resultados do teste.
-Relate e rastreie defeitos, se houver.
+- Identifique os casos de teste a serem automatizados.
+- Desenvolva scripts de automação para casos de teste identificados.
+- Execute os scripts de automação.
+- Analise os resultados do teste.
+- Relate e rastreie defeitos, se houver.
 
 ### Riscos e mitigação
 Os seguintes riscos são identificados:
 
-Ambiente: se os testes forem executados em ambiente de produção, pode gerar compras involuntárias, faturamentos indevidos, descasamento de estoque. Para mitigar esse risco, a URL base será definida no arquivo cypress.config.js.
-Exposição de dados do usuário: para mitigar esse risco, os dados do usuário serão criados apenas para a automação dos testes.
-Mudanças nos elementos da web: isso pode levar a erros de elemento não encontrado. Para mitigar este risco os localizadores web serão organizados num ficheiro diferente de forma dinâmica.
+- Ambiente: se os testes forem executados em ambiente de produção, pode gerar compras involuntárias, faturamentos indevidos, descasamento de estoque. 
+- Para mitigar esse risco, a URL base será definida na classe DriverWeb e a variavel da url esta na classe Variables.
+- Exposição de dados do usuário: para mitigar esse risco, os dados do usuário serão criados apenas para a automação dos testes.
+- Mudanças nos elementos da web: isso pode levar a erros de elemento não encontrado. 
+- Para mitigar este risco os localizadores web serão organizados num ficheiro diferente de forma dinâmica.
 
 ### Conclusão
-O plano de testes de automação descreve a estratégia para testes de automação do aplicativo Swag Labs. Este plano garantirá que o aplicativo seja estável e confiável. O plano também reduzirá o custo geral dos testes e acelerará o processo de teste.
+- O plano de testes de automação descreve a estratégia para testes de automação do aplicativo Swag Labs. 
+- Este plano garantirá que o aplicativo seja estável e confiável. 
+- O plano também reduzirá o custo geral dos testes e acelerará o processo de teste.
