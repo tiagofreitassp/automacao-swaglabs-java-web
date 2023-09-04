@@ -51,7 +51,7 @@ public class loginPO {
     }
 
     public void validarMensagemDeErroNoLogin() throws InterruptedException {
-        page.validateDisplayElement(By.className("error-message-container error"));
+        page.validateDisplayElement(By.className("error-message-container"));
         geradorPDF.evidenciaElemento("Validar mensagem de erro no login");
     }
 }
