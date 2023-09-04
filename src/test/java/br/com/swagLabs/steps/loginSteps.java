@@ -54,6 +54,7 @@ public class loginSteps extends DriverWeb {
     @Entao("devo visualizar uma mensagem de erro")
     public void devoVisualizarUmaMensagemDeErro() throws InterruptedException {
         loginPO.clicarNoBotaoLogin();
+        loginPO.validarMensagemDeErroNoLogin();
     }
 
     @Dado("que efetuei a autenticacao com {string} incorreto e {string}")
