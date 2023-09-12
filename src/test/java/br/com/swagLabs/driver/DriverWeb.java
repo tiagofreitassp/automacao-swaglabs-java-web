@@ -16,29 +16,28 @@ public class DriverWeb {
     }
 
     public void criarDriverWeb(String browser) throws Exception {
-        if(browser.equalsIgnoreCase("chrome")){
+        if(browser.equals("chrome")){
             criarDriverChrome(url);
-        }else if (browser.equalsIgnoreCase("firefox")){
+        }else if (browser.equals("firefox")){
             criarDriverFirefox(url);
-        }else if (browser.equalsIgnoreCase("edge")){
+        }else if (browser.equals("edge")){
             criarDriverEdge(url);
         }else{
-            criarDriverEdge(url);
+            criarDriverChrome(url);
         }
+
+        driver.manage().window().maximize();
+        driver.get(url);
     }
 
     public void criarDriverChrome(String url){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(url);
     }
 
     public void criarDriverFirefox(String url){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get(url);
     }
 
     public void criarDriverEdge(String url) throws Exception {
@@ -47,8 +46,6 @@ public class DriverWeb {
         //O Driver abaixo é do MS Edge Chromium e nao da versao anterior dele
         EdgeOptions edgeOptions = new EdgeOptions();
         driver = new EdgeDriver(edgeOptions);
-        driver.manage().window().maximize();
-        driver.get(url);
     }
 
     public void fecharDriverWeb(){

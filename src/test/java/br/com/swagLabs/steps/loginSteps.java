@@ -24,7 +24,7 @@ public class loginSteps extends DriverWeb {
     public void setUp(Scenario cenario) throws Exception {
         this.cenario = cenario;
         nomeDoCenario = this.cenario.getName();
-        criarDriverWeb(v.edge);
+        criarDriverWeb(v.chrome);
 
         loginPO = new loginPO(getCurrentRunningDriver(),this.cenario,this.nomeDoCenario);
     }
