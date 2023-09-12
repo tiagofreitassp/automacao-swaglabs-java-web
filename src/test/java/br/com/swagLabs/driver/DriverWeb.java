@@ -1,6 +1,5 @@
 package br.com.swagLabs.driver;
 
-import br.com.swagLabs.utils.InfraUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
