@@ -23,8 +23,16 @@
 hs_err_pid*
 replay_pid*
 
+# Default ignored files
+/shelf/
+/workspace.xml
+DS_Store
 .DS_Store
+/DS_Store
 /.DS_Store
+.screenshots
+./screenshots
+evidencias
 .evidencias
 /.evidencias/.DS_Store
 .evidencias/.DS_Store
